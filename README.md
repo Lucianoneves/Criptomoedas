@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+# Criptomoedas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para listar criptomoedas e visualizar detalhes de cada ativo (preço, valor de mercado, volume e variação 24h) usando a API do CoinCap.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Listagem de criptomoedas com paginação ("Carregar mais")
+- Busca por nome/slug (ex: `bitcoin`) e navegação para detalhes
+- Página de detalhes por rota dinâmica (`/detail/:cripto`)
+- Formatação de valores em USD (padrão `en-US`) e indicação de alta/baixa na variação 24h
 
-## Expanding the ESLint configuration
+## Rotas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `/` — Home (lista + busca)
+- `/detail/:cripto` — Detalhes (ex: `/detail/bitcoin`)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tecnologias
+
+- React
+- TypeScript
+- Vite
+- React Router DOM
+- CSS Modules
+
+## Requisitos
+
+- Node.js (LTS recomendado)
+- NPM (ou outro gerenciador compatível)
+
+## Como rodar o projeto
+
+1) Instale as dependências:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2) (Recomendado) Configure a chave da API do CoinCap (v3).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Crie um arquivo `.env` na raiz do projeto e adicione:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+VITE_COINCAP_API_KEY=SEU_TOKEN_AQUI
 ```
+
+3) Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+A aplicação será servida em um endereço local mostrado no terminal (ex: `http://localhost:5173`).
+
+## Scripts
+
+- `npm run dev` — ambiente de desenvolvimento
+- `npm run build` — build de produção
+- `npm run preview` — preview do build
+
+## Estrutura (resumo)
+
+- `src/router.tsx` — definição das rotas
+- `src/pages/home` — listagem e busca
+- `src/pages/detail` — detalhes do ativo
+- `src/components` — componentes reutilizáveis (layout, header, etc.)
+
+## Fonte de dados
+
+- CoinCap API v3 (`https://rest.coincap.io/v3/...`)
+
+Observação: alguns endpoints podem exigir autenticação via Bearer Token.

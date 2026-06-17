@@ -20,24 +20,24 @@
     justify-content: center;
 }
 
-.Logo{
+.logo{
     width: 60px;
     height: 60px;
     transition:  all 1px;
 }
 
-.Logo:hover{
+.logo:hover{
     transform: rotate(360deg);
 
 }
 
 
- .Profit{
+ .profit{
     color: #12f98a;
    
  }
 
- .Loss{
+ .loss{
     color: #af1616;
   
  }
