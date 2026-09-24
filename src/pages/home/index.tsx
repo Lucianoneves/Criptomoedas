@@ -133,7 +133,7 @@ export function Home() {
               </div>
             </td>
 
-            <td className={styles.tdLabel} data-label="Valor mercado">
+            <td className={styles.tdLabel} data-label="Valor de  mercado">
               {item.formatedMarket}
             </td>
 
