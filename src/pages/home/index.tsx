@@ -114,7 +114,7 @@ export function Home() {
           <th scope="col">Valor Mercado</th>
           <th scope="col">Preço</th>
           <th scope="col">Volume</th>
-          <th scope="col">Mudança 24h</th>
+          <th scope="col">Mudança 48h</th>
         </tr>
       </thead>
 
