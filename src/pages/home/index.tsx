@@ -161,6 +161,9 @@ export function Home() {
     <button className={styles.buttonMore} onClick={handleGetMore}>
       Carregar mais
     </button>
+    <button className={styles.buttonMore} onClick={handleGetMore}>
+      Carregar mais
+    </button>
   </main>
   )
 }
