@@ -1,0 +1,5 @@
+     
+     Listagem de todos os usaurios da nossa plataforma 
+
+
+     Buscar  nome  e emal e ID
