@@ -3,3 +3,8 @@
 
 
      Buscar  nome  e emal e ID
+
+     Bucar enedereço do cliente 
+
+     Bucar  preferencias e estilos de roupa 
+
