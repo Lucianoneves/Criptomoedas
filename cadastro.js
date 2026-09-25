@@ -6,5 +6,9 @@ function signup( email) {
    
     }
 
+    function login(  password) {
+      return  password
+    }
+
 
     
